@@ -312,8 +312,8 @@ h1 {
 
 /* End of Profile-Container stylin */
 
-/*Tasks-container stylin*/
-.tasks-container {
+/*All-Tasks-container stylin*/
+.all-tasks-container {
     background-color:var(--background-color);
     color:var(--text-color);
     padding: 20px;
@@ -324,8 +324,49 @@ h1 {
     display:flex;
     flex-direction: column;
     box-sizing: border-box;
+    flex-direction: column;
+    flex-shrink: 0; /* Prevent profile from shrinking */
 }
-/*END OF Tasks-container stylin*/
+.task-header{
+    color:blue;
+    display:flex;
+    flex-direction: column;
+}
+/*------------*/
+.task-list {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.tasks-container {
+    display: flex;
+    flex-direction: column-reverse; /* Most recent tasks first */
+}
+
+.task {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.task.pending {
+    background-color: #fff3cd;
+}
+
+.task.in-progress {
+    background-color: #d1ecf1;
+}
+
+.task.completed {
+    background-color: #c3e6cb;
+}
+
+/*------------*/
+/*END OF All-Tasks-container stylin*/
 
 .accordion {
     display: flex;

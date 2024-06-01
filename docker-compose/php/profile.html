@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,7 +66,7 @@
 
         <div class="profile-container">
 
-            <h1>My Profile</h1>
+            <h1>My Profile <!-- (βγαζει ο,τι ναναι στοιχεια επειδη δεν εχουμε συνδεσει χρηστη ακομη. οταν κανουμε το πρωτο sign in με επιτυχια θα κανουμε καπως verify και θα εμφανιζει τα σωστα i guess)--></h1> 
             <div class="profile-field">
                 <label for="username">Username:</label>
                 <span id="username">Loading...</span>
@@ -90,15 +91,25 @@
 
         </div>
 
-        <div class="tasks-container">
+        <div class="all-tasks-container">
 
-            <h1>My Tasks</h1>
+            <h1>My Tasks </h1>
 
+            <form id="addTaskForm">
+                <input type="text" id="title" placeholder="Title" required>
+                <textarea id="description" placeholder="Description" required></textarea>
+                <button type="submit">Add Task</button>
+            </form>
+
+            <div id="tasks">
+                <!-- Tasks will be dynamically loaded here -->
+            </div>
         </div>
 
     </div>
     
 
     <script src="script.js"></script>
+    <script src="tasks.js"></script>
 </body>
 </html>

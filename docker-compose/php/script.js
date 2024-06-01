@@ -97,6 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
 //           spanElement.replaceWith(spanElementNew);
 //       }
 //   };
+
+// Edit profile functionality (with password hidden)
 window.editField = function(fieldId) {
     if (fieldId === 'password') {
         const spanElement = document.getElementById('password-display');
@@ -144,7 +146,7 @@ window.editField = function(fieldId) {
 
 
 try{
-  const userData = { // Replace this with data fetched from the server after login!!!!!!!!
+  const userData = { // Replace this with data fetched from the server after login!!!!!!!! (sofia)
     username: "johndoe123",
     name: "John Doe",
     email: "john.doe@example.com",
@@ -204,7 +206,6 @@ try{
 
   // Initial theme setup
   updateTheme();
-
   toggleButton.addEventListener('click', () => {
       const newTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
       setCookie('theme', newTheme, 7); 
@@ -213,6 +214,54 @@ try{
 });
 
 
+//FETCH TASK INFO FROM DATABASE AND BRING INTO SITE functionality
+// document.addEventListener('DOMContentLoaded', function() {
+//     fetch('fetch_tasks.php') // Fetch tasks from the server
+//         .then(response => response.json()) // Parse the response as JSON
+//         .then(data => {
+//             const tasksContainer = document.getElementById('tasks');
+            
+//             // Iterate over each task in the fetched data
+//             data.forEach(task => {
+//                 // Create a container for each unique task
+//                 const uniqueTaskContainer = document.createElement('div');
+//                 uniqueTaskContainer.classList.add('task-container');
+
+//                 // Create a div for the task
+//                 const taskDiv = document.createElement('div');
+//                 taskDiv.classList.add('task');
+//                 taskDiv.innerHTML = `
+//                     <div class="task-header">${task.title}</div>
+//                     <div class="task-description">${task.description}</div>
+//                     <div class="task-status">Status: ${task.status}</div>
+//                 `;
+
+//                 // Append the task div to the unique task container
+//                 uniqueTaskContainer.appendChild(taskDiv);
+                
+//                 // Append the unique task container to the main tasks container
+//                 tasksContainer.appendChild(uniqueTaskContainer);
+//             });
+//         });
+// });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     fetch('fetch_tasks.php')// <---- Το όνομα του php αρχειου που κανει το fetch !
+//         .then(response => response.json())
+//         .then(data => {
+//             const tasksContainer = document.getElementById('tasks');
+//             data.forEach(task => {
+//                 const taskDiv = document.createElement('div');
+//                 taskDiv.classList.add('task');
+//                 taskDiv.innerHTML = `
+//                     <div class="task-header">${task.title}</div>
+//                     <div class="task-description">${task.description}</div>
+//                     <div class="task-status">Status: ${task.status}</div>
+//                 `;
+//                 tasksContainer.appendChild(taskDiv);
+//             });
+//         });
+// });
 
 
 //This code sends a POST request to check_username.php with the username as a parameter when the "Check" button is
