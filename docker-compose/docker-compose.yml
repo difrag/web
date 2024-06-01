@@ -5,10 +5,10 @@ services:
     container_name: di_inter_tech_mysql
     environment:
       - MYSQL_HOST=
-      - MYSQL_DATABASE=di_internet_technologies_project
-      - MYSQL_USER=webuser
-      - MYSQL_PASSWORD=webpass
-      - MYSQL_ROOT_PASSWORD=rootpass
+      - MYSQL_DATABASE=madb
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+      - MYSQL_ROOT_PASSWORD=
       - TZ=EEST
     ports:
       - "127.0.0.1:3306:3306"
