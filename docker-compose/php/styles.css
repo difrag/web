@@ -1,0 +1,443 @@
+/*VARIABLES*/
+
+
+body.light-theme {
+    --background-color: rgb(219, 211, 211);
+    --text-color: rgb(0, 0, 0);
+    --navbar-background-color: #ffffff;
+    --navbar-link-color: white;
+    --navbar-link-hover-bg-color: #364e92;
+    --button-bg-color: #af4c96;
+    --button-text-color: white;
+    --button-hover-bg-color: #45a049;
+}
+body.dark-theme {
+    --background-color: #1b1a1a;
+    --text-color:rgb(255, 255, 255);
+    --navbar-background-color: #222;
+    --navbar-link-color: #ffffff;
+    --navbar-link-hover-bg-color: #575757;
+    --button-bg-color: #0c0c0c;
+    --button-text-color: #ffffff;
+    --button-hover-bg-color: #333;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    /* background-image: linear-gradient(45deg, rgba(152, 148, 126, 0.53) 0%, rgba(152, 148, 126, 0.53) 14.286%,rgba(133, 144, 130, 0.53) 14.286%, rgba(133, 144, 130, 0.53) 28.572%,rgba(113, 140, 134, 0.53) 28.572%, rgba(113, 140, 134, 0.53) 42.858%,rgba(94, 136, 137, 0.53) 42.858%, rgba(94, 136, 137, 0.53) 57.144%,rgba(74, 132, 141, 0.53) 57.144%, rgba(74, 132, 141, 0.53) 71.42999999999999%,rgba(54, 128, 145, 0.53) 71.43%, rgba(54, 128, 145, 0.53) 85.71600000000001%,rgba(34, 124, 149, 0.53) 85.716%, rgba(34, 124, 149, 0.53) 100.002%),linear-gradient(135deg, rgb(148, 59, 120) 0%, rgb(148, 59, 120) 12.5%,rgb(134, 59, 118) 12.5%, rgb(134, 59, 118) 25%,rgb(119, 58, 115) 25%, rgb(119, 58, 115) 37.5%,rgb(106, 58, 113) 37.5%, rgb(106, 58, 113) 50%,rgb(91, 57, 110) 50%, rgb(91, 57, 110) 62.5%,rgb(77, 56, 108) 62.5%, rgb(77, 56, 108) 75%,rgb(63, 56, 106) 75%, rgb(63, 56, 106) 87.5%,rgb(49, 55, 103) 87.5%, rgb(49, 55, 103) 100%); */
+    background-image: linear-gradient(135deg, rgb(169, 169, 169),rgb(41, 41, 41)),linear-gradient(22.5deg, rgb(84, 190, 204) 0%, rgb(84, 190, 204) 19%,rgb(89, 172, 188) 19%, rgb(89, 172, 188) 20%,rgb(94, 154, 171) 20%, rgb(94, 154, 171) 22%,rgb(99, 136, 155) 22%, rgb(99, 136, 155) 31%,rgb(105, 117, 138) 31%, rgb(105, 117, 138) 33%,rgb(110, 99, 122) 33%, rgb(110, 99, 122) 45%,rgb(115, 81, 105) 45%, rgb(115, 81, 105) 51%,rgb(120, 63, 89) 51%, rgb(120, 63, 89) 100%),linear-gradient(45deg, rgb(84, 190, 204) 0%, rgb(84, 190, 204) 19%,rgb(89, 172, 188) 19%, rgb(89, 172, 188) 20%,rgb(94, 154, 171) 20%, rgb(94, 154, 171) 22%,rgb(99, 136, 155) 22%, rgb(99, 136, 155) 31%,rgb(105, 117, 138) 31%, rgb(105, 117, 138) 33%,rgb(110, 99, 122) 33%, rgb(110, 99, 122) 45%,rgb(115, 81, 105) 45%, rgb(115, 81, 105) 51%,rgb(120, 63, 89) 51%, rgb(120, 63, 89) 100%);
+    background-blend-mode:overlay, overlay, normal;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background-color 0.5s, color 0.5s; /*test for darkmode*/
+    height: 100vh; /* Ensure body takes full viewport height */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 60px; /* to prevent content from being hidden under the navbar (ισως θελει +++ αργοτερα)*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;/*VARIABLES*/
+
+}
+    
+.navbar{
+    background-color: var(--navbar-background-color);
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 50px;
+    border-radius: 50px;
+}
+.navbar .left-section ul{
+    display:flex;
+    align-self: flex-start;
+    text-align: right;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+/* isws axrhsto (mallon) */
+.navbar ul{ 
+    width: 100%;
+    text-align: right;
+}
+
+.navbar .middle-section{
+    display: flex;
+    align-self: center;
+}
+.navbar .theme-toggle-section{
+    margin-left: auto;
+}
+
+.navbar .right-section {
+    display: flex;
+    justify-content:center;
+}
+.navbar .logo {
+    color: var(--background-color);
+    width: 65px;
+    height: auto;
+    padding-left: 10px;
+}
+/* <!-- Creadted by me --> */
+.navbar .profile-photo{
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.navbar a {
+    text-decoration: none; /*remove ugly decorations from links*/
+}
+.navbar .link {
+    background-color: var(--button-bg-color);
+    color: var(--navbar-link-color);
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 8px 12px;
+    border-radius: 5px;
+
+}
+.navbar .link:hover {
+    background-color: var(--navbar-link-hover-bg-color);
+    border-radius: 5px;
+}
+.navbar .search-container {
+    display: flex;
+    align-items: center;
+    border-style: solid;
+    border-radius: 6px;
+    border-color: var(--button-bg-color);
+    border-width: 4px;
+}
+.navbar .search-bar {
+    padding: 5px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+.navbar .search-btn {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+.navbar .profile-btn{
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar .btn {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    /* margin-left: 10px; */
+    margin: 0 10px;
+    padding: 8px 12px;
+}
+.navbar .btn:hover, .navbar .search-btn:hover {
+    background-color: var(--navbar-link-hover-bg-color);
+    color: var(--button-text-color);    
+}
+/* <!-- Creadted by Coding Pakistan Youtube Channel --> */
+.sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 10%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+.sub-menu-wrap.open-menu{
+    max-height: 400px;
+}
+.sub-menu{
+    background: white;
+    padding: 20px;
+    margin: 10px;
+}
+.user-info{
+    display: flex;
+    align-items: center;
+}
+.user-info h3{
+    font-weight: bold;
+}
+.user-info img{
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.sub-menu hr{
+    border: 0;
+    height: 2px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+.sub-menu-link, #logout-btn{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #525252;
+    margin: 12px 0;
+}
+.sub-menu-link p{
+    width: 100%;
+}
+.sub-menu-link img{
+    width: 40px;
+    background: #e5e5e5;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 15px;
+}
+.sub-menu-link span{
+    font-size: 22px;
+    transition: transform 0.5s;
+}
+.sub-menu-link:hover span{
+    transform: translate(5px);
+}
+.sub-menu-link:hover p{
+    font-weight: 600;
+}
+/* <!-- END OF Creadted by Coding Pakistan Youtube Channel --> */
+
+/* main container stylin*/
+.main-container{
+    display: flex;
+    width: 100%;
+    /* padding-top: 50px; */
+    margin-top: 50px; /* Adjust this padding to match the navbar height */
+    box-sizing: border-box;
+}
+/*END OF MAIN CONTAINER STLYING */
+
+/* Profile-Container stylin */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Fixed width for profile */
+    margin-right: 20px; /* Space between profile and tasks */
+    flex-shrink: 0; /* Prevent profile from shrinking */
+    background-color:var(--background-color);
+    color:var(--text-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+h1 {
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-field {
+    align-self: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-field label {
+    margin-right: 10px;
+    width: 80px;
+    
+}
+
+.profile-field input, .profile-field span {
+    flex-grow: 1;
+    padding: 5px;
+    margin-right: 5px;
+    border: var(--text-color);
+    border-radius: 4px;
+    color: var(--text-color);
+    background-color:var(--navbar-background-color);
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Show ellipsis for overflow text */
+    width: 0; /* Ensure both span and input take the full available width */
+    min-width: 0; /* Prevent input from being larger than span */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+
+}
+
+.profile-field button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: var(--button-bg-color);
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.profile-field button:hover {
+    background-color:var(--navbar-link-hover-bg-color);
+}
+
+.profile-field span {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color:var(--background-color)
+}
+
+
+/* End of Profile-Container stylin */
+
+/*Tasks-container stylin*/
+.tasks-container {
+    background-color:var(--background-color);
+    color:var(--text-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; /* Take up the remaining space */
+    margin-left: 20px; /* Space between tasks and profile (optional) */
+    display:flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+/*END OF Tasks-container stylin*/
+
+.accordion {
+    display: flex;
+    align-items: center;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    margin-top: 2%;
+    width: 15%;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  .panel { /* Accordion contents */
+    display: flex; /* isws buggy */
+    padding: 0 8px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    width: 13%;
+    border: none;
+    border-radius: 20px;
+    cursor: default;
+    margin-top: 3px;
+    background-color: #dfdfdf3a;
+  }
+
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: top;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.footer-container {
+    position: fixed;
+    right: 10px;
+    bottom: 100px;
+}
+.signup-button {
+    margin-left: 10px;
+}
+
+/* Page 2 Styles */
+.help-page {
+    text-align: center;
+    padding: 50px;
+}
+
+
+
+
+
+/* SIGN UP PAGE  */
+.signup-container, .signin-container {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signup-container form, .signin-container form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.signup-container input, .signin-container input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* add border and padding to total element size */
+}
+.signup-container h1 {
+    margin: 0 0 20px;
+}
+.signup-container label, .signin-container label {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+.signup-container .optional-note{
+    font-size: 12px;
+    color: gray;
+    margin-top: -5px;
+}
+.signup-container .checker-container{
+    display: flex;
+    align-items: stretch;
+    width: calc(100% - 22px); /* 22 = 10margin+10margin+1pad+1pad*/
+}
+.signup-container .checker-container button {
+    flex-grow: 1;
+    margin-left: 8px;
+    margin: 10px;
+    height: auto;
+    cursor: pointer;
+}
+

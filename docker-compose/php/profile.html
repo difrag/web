@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MadClown</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="left-section">
+            <i class="fas fa-kiwi-bird logo"></i>
+            <a href="/this_one/index.html" class="link">Home</a>
+            <a href="/this_one/profile.html" class="link">Profile</a>
+            <a href="/this_one/help.html" class="link"> Help</a>
+        </div>
+        <div class="middle-section">
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            
+        </div>
+        <div class="theme-toggle=section">
+            <button id="theme-toggle" class="btn">Change Theme </button>
+        </div>
+        <div class="right-section"> 
+            <a href="/this_one/signin.html" class="btn">Log In</a>
+            <a href="/this_one/signup.html" class="btn">Register</a>
+            
+            <!-- sub-menu-wrap is the dropdown menu -->
+            <img src="images/user.png" class="user-pic" onclick="toggleMenu()">
+            <div class="sub-menu-wrap" id="subMenu"> 
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="images/user.png">
+                        <h3> test user name </h3>
+                    </div>
+                    <hr>
+                        <a href="/this_one/profile.html" class="sub-menu-link">
+                            <img src="images/profile.png">
+                            <p>Edit Profile</p>
+                            <span> > </span>
+                        </a>
+    
+                        <a href="/this_one/help.html" class="sub-menu-link">
+                            <img src="images/help.png">
+                            <p>Help & Support</p>
+                            <span> > </span>
+                        </a>
+    
+                        <div id="logout-btn" class="sub-menu-link" onclick="Logout()">
+                            <img src="images/logout.png">
+                            <p>Logout</p>
+                            <span> > </span>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-container">
+
+        <div class="profile-container">
+
+            <h1>My Profile</h1>
+            <div class="profile-field">
+                <label for="username">Username:</label>
+                <span id="username">Loading...</span>
+                <button onclick="editField('username')">Edit</button>
+            </div>
+            <div class="profile-field">
+                <label for="name">Name:</label>
+                <span id="name">Loading...</span>
+                <button onclick="editField('name')">Edit</button>
+            </div>
+            <div class="profile-field">
+                <label for="email">Email:</label>
+                <span id="email">Loading...</span>
+                <button onclick="editField('email')">Edit</button>
+            </div>
+            <div class="profile-field">
+                <label for="password">Password:</label>
+                <span id="password-display">••••••••</span>
+                <input type="password" id="password-edit" style="display: none;" value="actual_password_here">
+                <button onclick="editField('password')">Edit</button>
+            </div>
+
+        </div>
+
+        <div class="tasks-container">
+
+            <h1>My Tasks</h1>
+
+        </div>
+
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
